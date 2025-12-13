@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "AI Assistant Extension",
+  "version": "1.0.0",
+  "description": "Chrome extension integration with AssemblyAI and Gemini",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "clipboardWrite"
+    
+  ],
+  "host_permissions": [
+    "https://api.assemblyai.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "http://localhost/*"
+  ],
+  "background": {
+    "service_worker": "background/service_worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/content_script.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*", "shared/*.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

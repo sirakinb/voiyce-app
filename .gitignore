@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets (prevent committing keys if hardcoded)
+# It is recommended to use environment variables or a config file that is gitignored
+.env
+
+# Build output
+dist/
+build/
