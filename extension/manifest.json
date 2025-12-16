@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "Voiyce - Voice Input Assistant",
+    "version": "1.0",
+    "description": "Floating voice input overlay for any webpage with transcription and LLM processing.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "clipboardWrite"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "styles.css"
+            ]
+        }
+    ],
+    "action": {
+        "default_title": "Voiyce"
+    },
+    "icons": {
+        "16": "icon48.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    }
+}
